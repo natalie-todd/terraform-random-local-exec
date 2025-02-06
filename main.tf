@@ -6,16 +6,10 @@ resource "random_id" "random" {
   byte_length = 12
 
   provisioner "local-exec" {
-      command = "aws --version"
+      command = "./test-script.sh"
   }
 }
 
 output "random" {
   value = random_id.random.hex
-}
-
-resource "null_resource" "exec-script" {
-  provisioner "local-exec" {
-    command = "aws --version"
-  }
 }
