@@ -6,7 +6,7 @@ resource "random_id" "random" {
   byte_length = 12
 
   provisioner "local-exec" {
-      command = "./test-script.sh"
+      command = "#!/bin/sh;python3 -m venv myenv;python3 ./test.py"
   }
 }
 
